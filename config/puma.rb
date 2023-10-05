@@ -41,3 +41,6 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 
 # Allow puma to be restarted by `bin/rails restart` command.
 plugin :tmp_restart
+
+# Accept connections from any IP address
+# bind 'tcp://0.0.0.0:5000'
