@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @article = Article.find(params[:id])
     @article.destroy
 
@@ -44,6 +44,6 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :body)
+      params.require(:article).permit(:title, :body, :status)
     end
 end

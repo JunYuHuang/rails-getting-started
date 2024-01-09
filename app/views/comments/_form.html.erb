@@ -1,7 +1,9 @@
 
 <%=
-  form_with model: [ @article,
-  @article.comments.build ] do |form|
+  form_with model: [
+    @article,
+    @article.comments.build
+  ] do |form|
 %>
   <p>
     <%= form.label :commenter %><br>
@@ -11,6 +13,11 @@
     <%= form.label :body %><br>
     <%= form.text_area :body %>
   </p>
+  <p>
+    <%= form.label :status %><br>
+    <%= form.select(
+      :status, Visible::VALID_STATUSES, selected: "public"
+    )%>
   <p>
     <%= form.submit %>
   </p>
